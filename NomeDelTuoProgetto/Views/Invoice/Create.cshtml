@@ -1,0 +1,25 @@
+﻿@model NomeDelTuoProgetto.Models.Invoice
+
+@{
+    ViewData["Title"] = "Create Invoice";
+}
+
+<h2>Create Invoice</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="NumeroFattura">Invoice Number</label>
+        <input asp-for="NumeroFattura" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="DataEmissione">Issue Date</label>
+        <input asp-for="DataEmissione" type="date" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Importo">Amount</label>
+        <input asp-for="Importo" type="number" step="0.01" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<a asp-action="PartialView">Back to List</a>

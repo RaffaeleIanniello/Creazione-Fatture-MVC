@@ -1,0 +1,30 @@
+﻿@model List<NomeDelTuoProgetto.Models.Invoice>
+
+@{
+    ViewData["Title"] = "Invoice List";
+}
+
+<h2>Invoice List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Invoice Number</th>
+            <th>Issue Date</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var invoice in Model)
+        {
+            <tr>
+                <td>@invoice.NumeroFattura</td>
+                <td>@invoice.DataEmissione.ToShortDateString()</td>
+                <td>@invoice.Importo.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create">Create Invoice</a>
+
